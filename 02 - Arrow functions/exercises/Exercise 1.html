@@ -43,6 +43,19 @@
 
   // 🔥 This can also be done in a single .reduce(), but we're practicing arrow functions here, so chain them!
 
+  const items = Array.from(document.getElementsByTagName('li'));
+
+  const totalTime = items
+    .filter(item => item.innerText.includes('Flexbox'))
+    .map(item => item.dataset.time)
+    .map(item => {
+      const time = item.split(":").map(t => parseInt(t));
+      return time[0] * 60 + time[1];
+    })
+    .reduce((prev, curr) => prev + curr);
+
+  console.log('🚀 ~ file: Exercise 1.html ~ line 53 ~ totalTime', totalTime);
+
 </script>
 </body>
 </html>
