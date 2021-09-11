@@ -31,6 +31,10 @@
 
 <script>
   
+  const titleNode = document.querySelector('.jump');
+  const text = titleNode.textContent;
+  titleNode.innerHTML = [...text].map(letter => `<span>${letter}</span>`).join('');
+
 </script>
 </body>
 </html>
